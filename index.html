@@ -22,13 +22,12 @@
       <form id="registerForm">
         <label for="registerName">Nombre de usuario</label>
         <input id="registerName" name="name" type="text" minlength="2" maxlength="32" autocomplete="nickname" placeholder="Escribe tu nombre" required />
-        <label for="registerPassword">Contraseña</label>
-        <input id="registerPassword" name="password" type="password" minlength="8" autocomplete="current-password" placeholder="Mínimo 8 caracteres" required />
         <p class="input-hint" id="authHint">El nombre debe ser único.</p>
         <p class="form-error" id="registerError" role="alert"></p>
         <button class="primary-button register-submit" id="authSubmit" type="submit">Crear cuenta <span>→</span></button>
+              <button class="secondary-button full-button" id="demoButton" type="button">Probar con un ejemplo</button>
       </form>
-      <p class="register-note">Tu cuenta se sincroniza con GroupTrack al iniciar sesión.</p>
+      <p class="register-note">Sin correo ni contraseña. Tu nombre identifica tu cuenta en este navegador.</p>
     </main>
     <p class="register-footer">GroupTrack · Organiza y colabora</p>
   </section>
@@ -62,7 +61,6 @@
   </div>
   <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Cerrar">×</button><span class="modal-icon">✦</span><h2 id="modalTitle"></h2><p id="modalDesc"></p><form id="dataForm"></form></div></div>
   <div class="toast" id="toast" role="status"></div>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js"></script>
 </body>
 </html>
