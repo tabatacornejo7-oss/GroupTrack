@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f8fc" />
+  <title>GroupTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section id="registerScreen" class="register-screen">
+    <a class="brand register-brand" href="#"><span class="brand-mark"><svg viewBox="0 0 36 36"><rect x="2" y="2" width="32" height="32" rx="11" fill="currentColor"/><path d="M11 18.2 15.4 22.5 25 13" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Group<span class="brand-light">Track</span></span></a>
+    <main class="register-card">
+      <span class="register-icon">✦</span>
+      <p class="register-eyebrow">TU ESPACIO DE EQUIPO</p>
+      <h1 id="authTitle">Crea tu cuenta</h1>
+      <p class="register-intro" id="authIntro">Empieza a organizar tus trabajos en grupo.</p>
+      <div class="auth-switch" role="tablist" aria-label="Acceso"><button id="loginMode" type="button" role="tab" aria-selected="false">Iniciar sesión</button><button id="registerMode" type="button" role="tab" aria-selected="true">Crear cuenta</button></div>
+      <form id="registerForm">
+        <label for="registerName">Nombre de usuario</label>
+        <input id="registerName" name="name" type="text" minlength="2" maxlength="32" autocomplete="nickname" placeholder="Escribe tu nombre" required />
+        <p class="input-hint" id="authHint">El nombre debe ser único.</p>
+        <p class="form-error" id="registerError" role="alert"></p>
+        <button class="primary-button register-submit" id="authSubmit" type="submit">Crear cuenta <span>→</span></button>
+      </form>
+      <p class="register-note">Sin correo ni contraseña. Tu nombre identifica tu cuenta en este navegador.</p>
+    </main>
+    <p class="register-footer">GroupTrack · Organiza y colabora</p>
+  </section>
+
+  <div class="app-shell" id="appShell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard"><span class="brand-mark"><svg viewBox="0 0 36 36"><rect x="2" y="2" width="32" height="32" rx="11" fill="currentColor"/><path d="M11 18.2 15.4 22.5 25 13" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Group<span class="brand-light">Track</span></span></a>
+      <div class="workspace-switch"><span class="workspace-icon" id="userInitial">?</span><span class="workspace-copy"><strong id="workspaceUser">Mi espacio</strong><small>Espacio personal</small></span></div>
+      <div class="nav-label">TU ESPACIO</div>
+      <nav class="main-nav" aria-label="Navegación">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span><span>Proyectos</span></button>
+        <button class="nav-item" data-page="project"><span class="nav-icon">◫</span><span>Proyecto</span></button>
+        <button class="nav-item" data-page="tasks"><span class="nav-icon">☷</span><span>Tareas</span></button>
+        <button class="nav-item" data-page="calendar"><span class="nav-icon">▣</span><span>Calendario</span></button>
+        <button class="nav-item" data-page="participation"><span class="nav-icon">◉</span><span>Participación</span></button>
+        <button class="nav-item" data-page="notifications"><span class="nav-icon">♧</span><span>Notificaciones</span></button>
+      </nav>
+    </aside>
+    <main class="main-area">
+      <header class="topbar"><button class="back-button" id="backButton" aria-label="Volver" title="Volver">←</button><button class="mobile-menu" id="mobileMenu" aria-label="Abrir menú">☰</button><div class="crumb"><span>GroupTrack</span><span class="crumb-slash">/</span><strong id="crumbTitle">Proyectos</strong></div><div class="top-actions"><button class="icon-button notification-button" data-page="notifications" aria-label="Notificaciones">♧</button><span class="top-divider"></span><div class="profile-menu"><button class="top-avatar" id="topInitial" aria-label="Cuenta" aria-expanded="false">?</button><div class="profile-popover" id="profilePopover" hidden><strong id="topProfileName">Usuario</strong><button id="logoutButton">Cerrar sesión <span>↪</span></button></div></div></div></header>
+      <div class="page-wrap">
+        <section class="page active-page" id="page-dashboard"></section>
+        <section class="page" id="page-project"></section>
+        <section class="page" id="page-tasks"></section>
+        <section class="page" id="page-calendar"></section>
+        <section class="page" id="page-documents"></section>
+        <section class="page" id="page-participation"></section>
+        <section class="page" id="page-notifications"></section>
+      </div>
+    </main>
+  </div>
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="Cerrar">×</button><span class="modal-icon">✦</span><h2 id="modalTitle"></h2><p id="modalDesc"></p><form id="dataForm"></form></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
